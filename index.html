@@ -17,107 +17,173 @@
 <!-- <link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&display=swap" rel="stylesheet">
  -->
    
-        <style>
-
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
+  <style>
+  @import url(https://fonts.googleapis.com/css?family=Montserrat);
+@font-face {
+  font-family: 'bebas_neueregular';
+  src: url("https://dl.dropboxusercontent.com/u/81135676/bebasneue_regular-webfont.eot");
+  src: url("https://dl.dropboxusercontent.com/u/81135676/bebasneue_regular-webfont.woff2") format("woff2"), url("https://dl.dropboxusercontent.com/u/81135676/bebasneue_regular-webfont.woff") format("woff"), url("https://dl.dropboxusercontent.com/u/81135676/bebasneue_regular-webfont.ttf") format("truetype"), url("https://dl.dropboxusercontent.com/u/81135676/bebasneue_regular-webfont.svg#bebas_neueregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'bebas_neuebold';
+  src: url("https://dl.dropboxusercontent.com/u/81135676/bebasneue_bold-webfont.eot");
+  src: url("https://dl.dropboxusercontent.com/u/81135676/bebasneue_bold-webfont.woff2") format("woff2"), url("https://dl.dropboxusercontent.com/u/81135676/bebasneue_bold-webfont.woff") format("woff"), url("https://dl.dropboxusercontent.com/u/81135676/bebasneue_bold-webfont.ttf") format("truetype"), url("https://dl.dropboxusercontent.com/u/81135676/bebasneue_bold-webfont.svg#bebas_neuebold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+body, html {
+  display: block;
   padding: 0;
-  background-color: #000;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  height: 100%;
 }
 
-.bg-img {
-  position: absolute;
+body {
+  font-family: "bebas_neuebold", "Arial", sans-serif;
+}
+
+section {
+  position: relative;
   width: 100%;
   height: 100%;
-  background: url(https://scontent.ford4-1.fna.fbcdn.net/v/t1.0-9/95766953_103082844741680_4990911555987046400_n.jpg?_nc_cat=107&_nc_sid=09cbfe&_nc_ohc=gRu8R_QITo0AX_vcEWb&_nc_ht=scontent.ford4-1.fna&oh=4362ea5cf1221dfda5f3b14d1935764f&oe=5EE14EDF) no-repeat center center fixed;
-  background-size: cover;
-  background-color: #000;
-  opacity: .5;
-  filter: alpha(opacity=50);
+  background: radial-gradient(circle, #FBB600, #DA5900);
 }
 
-.content {
-  font-family: 'Avenir-Next',Avenir,Helvetica,sans-serif;
-  color: rgb(26, 26, 26);
-  background-color: none;
-  z-index: 2;
+#beerCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.coming_content {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 70%;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  z-index: 101;
+}
+.coming_content h1 {
+  font-size: 5.625em;
+  margin: 0;
+  letter-spacing: 2px;
+  text-align: center;
+  color: white;
+}
+.coming_content .separator_container {
+  width: 100%;
+  display: block;
+  text-align: center;
+  position: relative;
+  margin: 12px 0;
+}
+.coming_content .separator_container:before, .coming_content .separator_container:after {
+  display: table;
+  content: "";
+}
+.coming_content .separator_container:after {
+  clear: both;
+}
+.coming_content .separator {
+  color: white;
+  margin: 0 auto 1em;
+  width: 11em;
+}
+.coming_content .line_separator svg {
+  width: 0;
+  height: 20px;
+}
+.coming_content .line_separator:before, .coming_content .line_separator:after {
+  display: block;
+  width: 40%;
+  content: " ";
+  margin-top: 14px;
+  border: 1px solid white;
+}
+.coming_content .line_separator:before {
+  float: left;
+}
+.coming_content .line_separator:after {
+  float: right;
+}
+.coming_content h3 {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
+  line-height: 2;
+  font-size: 1em;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+}
+.coming_content h3 a {
+  text-decoration: underline;
 }
 
-h1 {
-  font-size: 160px;
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-h2 {
-  margin-top: 32vh;
-  max-width: 700px;
-  font-size: 3em;
-  width: 90%;
-}
-
-p {
-  text-align: left;
-  padding-bottom: 32px;
-  font-size: 2em;
-}
-
-.btn {
-    font-size: 2em;
-    font-weight: bold;
-color: white;
-  display: inline-block;
-  border: 1px solid #aaa;
-  border-radius: 40px;
-  padding: 15px 30px;
-  margin-right: 15px;
-  margin-bottom: 10px;
-  background-color: rgba(0,0,0,0.32);
-}
-.btn:hover {
-  color: #e2e2e2;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-@media only screen and (max-width: 480px) {
-  .btn {
-    background-color: white;
-    color: #444444;
-    width: 100%;
-  }
-
-  h1 {
-    font-size: 120px;
-  }
-}
-
-            </style>
-            </head>
-<body>
-  <div class='container'>
-    <div class='row content'>
-      <div class='col-lg-12'></div>
-      <div class='col-lg-12' style="margin: auto;margin: 20% 0 0 120px;">
-        <!-- <h1 style="margin-left: -0.15em;">Coming Soon</h1> -->
-        <h2 style="transform: translate3d(50vw,-32vh,0);color: rgb(251, 251, 251);"> Coming Soon!.</h2>
-        <p style="color: #bbb;">
-          You may want to head to facebook for now.
-          <br>
-           Spanish Lessons, tips, and articles coming soon.
-          </br>
-        </p>
-        <span class='btn'>Go Back To Facebook </span>
-        <span class='btn'>  Schedule online </span>
+</style>
+  </head>
+  <body>
+<section>
+  <canvas id='beerCanvas'></canvas>
+  <div class="coming_content">
+    <h1>Coming Soon</h1>
+    <div class="separator_container">
+      <div class="separator line_separator">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="320.864" height="320.864" viewBox="0 0 320.864 320.864"><path fill="#fff" d="M184.04 81.83c-1.89-5.1-3.46-28.63-3.926-55.05-.003-.1.107-.37.514-.37 2.092-.125 3.248-1.79 3.248-3.91V4c0-2.2-1.8-4-4-4H140.99c-2.2 0-4 1.8-4 4v18.5c0 2.123 1.06 3.77 3.152 3.89.673 0 .613.478.61.673-.463 26.677-2.035 49.67-3.925 54.77-11.12 29.993-35.884 27.39-35.884 63.393V273.96c0 49.536 24.92 47.044 59.49 46.82 34.57.224 59.49 2.716 59.49-46.82V145.226c0-36.002-24.764-33.4-35.883-63.394zm12.89 127.953c-5.845 8.89-31.005 30.02-36.458 30.02-5.338 0-30.727-21.21-36.532-30.02-2.907-4.41-4.97-9.277-4.627-15.678.605-11.325 9.866-20.678 21.208-20.678 11.66 0 18.45 12.44 19.915 12.44 1.675 0 8.755-12.44 19.914-12.44 11.34 0 20.6 9.353 21.206 20.678.342 6.4-1.713 11.247-4.627 15.678z"/></svg>
+        </span>
       </div>
     </div>
+    <h3>Elite Spanish Tutoring.</h3>
   </div>
-  <div class='bg-img'></div>
-</body>
+</section>
+
+<script>var canvas = document.getElementById('beerCanvas');
+var ctx = canvas.getContext('2d');
+var particles = [];
+var particleCount = 280;
+
+for (var i = 0; i < particleCount; i++) {
+  particles.push(new particle());
+}
+
+function particle() {
+  this.x = Math.random() * canvas.width;
+  this.y = canvas.height + Math.random() * 300;
+  this.speed = 1 + Math.random();
+  this.radius = Math.random() * 3;
+  this.opacity = (Math.random() * 100) / 1000;
+}
+
+function loop() {
+  requestAnimationFrame(loop);
+  draw();
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.globalCompositeOperation = 'lighter';
+  for (var i = 0; i < particles.length; i++) {
+    var p = particles[i];
+    ctx.beginPath();
+    ctx.fillStyle = 'rgba(255,255,255,' + p.opacity + ')';
+    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2, false);
+    ctx.fill();
+    p.y -= p.speed;
+    if (p.y <= -10)
+      particles[i] = new particle();
+  }
+}
+loop();</script>
+  </body>
 </html>
